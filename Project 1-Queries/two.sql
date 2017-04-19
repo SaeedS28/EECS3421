@@ -1,0 +1,1 @@
+select name, maxQuantity as number from yrb_customer inner join (select cid, max(cQuantity) as maxQuantity from (select cid, club, count(qnty) as cQuantity from yrb_purchase group by cid, club) group by cid) JD on yrb_customer.cid = JD.cid

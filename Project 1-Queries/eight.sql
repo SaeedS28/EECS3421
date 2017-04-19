@@ -1,0 +1,1 @@
+select cast(round(avg(price),2) as Decimal (5,2)) as avg_cost from (Select min(price) as price, cat from (Select t.title as title, t.cat as cat, s.price as price from yrb_book t inner join yrb_offer s on t.title=s.title and t.year=s.year) group by cat)

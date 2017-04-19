@@ -1,0 +1,1 @@
+Select distinct title from yrb_book t where not exists(Select club from yrb_club a where not exists (Select title from yrb_offer o where o.title=t.title and a.club=o.club))

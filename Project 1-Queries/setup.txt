@@ -1,0 +1,5 @@
+To create the YRB DB in your DB2 schema space, copy the script into your home directory and then issue the commands: 
+
+% setenv DB2DBDFT c3421m 
+% db2 -tf yrb-create 
+

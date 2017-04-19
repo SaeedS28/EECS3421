@@ -1,0 +1,1 @@
+select title, year from (select title, year, weight, RANK() over  (order by weight desc)r1 from yrb_book order by r1) where r1=22

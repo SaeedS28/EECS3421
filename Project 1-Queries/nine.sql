@@ -1,0 +1,1 @@
+select cid, cast (DECIMAL((maximum - minimum),7,2)/DECIMAL(interval - 1,7,2) as decimal (7,2)) as avg_gap from (select count (cid) as interval, cid, min(day) as minimum, max(day) as maximum from (select cid, days(s.when) as day, count(cid) as purchase from yrb_purchase s group by cid, days(s.when)) group by cid having count(cid)> 1)

@@ -1,0 +1,1 @@
+select title, year, cat from yrb_book where(cat, year) in (select cat, min(year) from yrb_book group by cat)
